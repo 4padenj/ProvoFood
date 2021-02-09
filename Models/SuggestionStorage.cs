@@ -8,6 +8,7 @@ namespace ProvoFood.Models
 {
     public class SuggestionStorage
     {
+        // This class is for user submitted suggestions
         [Required]
         public string PerName { get; set; }
         [Required]
