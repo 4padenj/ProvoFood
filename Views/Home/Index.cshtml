@@ -1,0 +1,37 @@
+﻿@{
+    ViewData["Title"] = "Welcome";
+}
+@model IEnumerable<TopRestaurant>  
+
+<div class="text-center my-3">
+    <h1 class="display-1">WELCOME TO PROVO</h1>
+    <h2 class="display-4">Delicious Food Awaits</h2>
+</div>
+<div class="font-weight-bold">
+    <h3>Top 5 Places You <em>MUST</em> Try</h3>
+</div>
+<hr />
+<div class="container bg-dark rounded">
+    <div class="row">
+        @foreach (TopRestaurant rest in Model)
+        {
+            <div class="col-sm-6 my-3 p-4">
+                <div class="card">
+                    <div class="card-header">
+                        Restaurant #@rest.Rank
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">@rest.RestName</h5>
+                        <p class="card-text"><span class="font-italic">Best Dish:</span> @rest.FavDish</p>
+                        <p class="card-text"><span class="font-italic">Phone Number:</span> @rest.RestPhone</p>
+                        <p class="card-text"><span class="font-italic">Address:</span> @rest.RestAddress</p>
+                        <a href=@rest.RestSite class="btn btn-primary" target="_blank">Vist the Site</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+
+    </div>
+
+</div>

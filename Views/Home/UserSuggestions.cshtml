@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<ProvoFood.Models.SuggestionStorage>
+
+<div class="jumbotron text-center">
+    <h1>Other Great Suggestions</h1>
+
+</div>
+<div class="container bg-danger">
+    <div class="row">
+        @foreach (ProvoFood.Models.SuggestionStorage sug in Model)
+        {
+            <div class="col-md-4">
+                <div class="card my-2">
+                    <div class="card-header">
+                        @sug.RestName
+                    </div>
+                    <div class="card-body">
+                        <p class="card-title"><em>Suggester:</em> @sug.PerName</p>
+                        <p class="card-text"><em>Favorite Dish: </em> @sug.FavDish</p>
+                        <p class="card-text"><em>Restaurant Phone: </em> @sug.RestPhone</p>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+    
+    
+</div>

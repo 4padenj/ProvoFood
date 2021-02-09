@@ -1,0 +1,38 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Add a Suggestion";
+}
+@model ProvoFood.Models.SuggestionStorage
+
+<div class="text-center my-3">
+    <h1 class="display-1">Add A Suggestion</h1>
+    <h2 class="display-4">Thank You For Your Input</h2>
+</div>
+
+<div class="container">
+    <form class="w-auto" method="post" asp-action="Suggestion">
+        <div class="form-group">
+            <label for="perName">Your Name:</label>
+            <input type="text" class="form-control" id="perName" placeholder="i.e. John Doe" asp-for="PerName" required>
+        </div>
+        <div class="form-group">
+            <label for="restName">Restaurant Name:</label>
+            <input type="text" class="form-control" id="restName" placeholder="i.e. Chic-fil-a" asp-for="RestName" required>
+        </div>
+        <div class="form-group">
+            <label for="favDish">Best Dish:</label>
+            <input type="text" class="form-control" id="favDish" placeholder="i.e. Chicken Nuggets" asp-for="FavDish">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number: <small>Please use this format: ###-###-####</small></label>
+            <input type="tel" class="form-control" id="phone"
+                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="i.e. 801-377-2222"
+                   asp-for="RestPhone" required>
+        </div>
+        <button class="btn btn-primary" type="submit">Suggest This Place</button>
+    </form>
+
+</div>
+
